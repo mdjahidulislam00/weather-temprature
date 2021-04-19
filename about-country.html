@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Country Information</title>
+</head>
+
+<body>
+    <div class="container">
+        <ul id='country-list'>
+
+        </ul>
+    </div>
+
+    <script>
+        // document.getElementById('search').addEventListener('click', function () {
+        //     function searchCountry(name) {
+        //         fetch("https://restcountries.eu/rest/v2/name/" + `${name}`)
+        //             .then(rec => rec.json())
+        //             .then(data => {
+        //                 console.log(data)
+        //                 const jahid = data[0];
+        //                 console.log(jahid.name);
+        //                 console.log(jahid.alpha2Code)
+        //             })
+        //             .catch(error => alert('please enter correct name'))
+        //     }
+        //     const country = document.getElementById('country-name').value;
+        //     searchCountry(country);
+        // })
+
+        fetch('https://restcountries.eu/rest/v2/all')
+        .then(rec => rec.json())
+        .then(data => {
+            for(let i = 0; i< 5; i++){
+                const countrys = data[i];
+                const desh = countrys.name;
+                const ul = document.getElementById('country-list');
+                const li = document.createElement('li');
+                li.innerText = desh;
+                ul.appendChild(li);
+            }
+            console.log(data)
+        })
+    </script>
+</body>
+
+</html>
