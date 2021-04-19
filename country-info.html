@@ -28,12 +28,12 @@
         .information-body{
             margin-top:20px;
             height: 400px;
-            border:2px solid purple;
+            border:5px solid purple;
             border-radius: 5px;
             display:none;
         }
         .information-body img{
-            margin:0px 300px;
+            margin:5px 300px;
 
         }
         p{
@@ -48,10 +48,10 @@
         }
         h2{
             text-align:center;
-            color:indianred
+            color:rgb(30, 231, 23)
         }
         .info-text{
-            color:indigo;
+            color:rgb(20, 157, 236);
             margin-left: 10px;
             font-weight: 700;
         }
@@ -88,7 +88,6 @@
     </div>
     <script>
         document.getElementById('search-button').addEventListener('click', function(){
-            document.getElementById('country-info-data').style.display='block';
             function countryNameInput(name){
             fetch('https://restcountries.eu/rest/v2/name/' + `${name}`)
             .then(rec => rec.json())
@@ -110,6 +109,7 @@
                 document.getElementById('full-name').innerText = fullName;  
             })
             .catch(error => alert('Wrong Name'))
+            document.getElementById('country-info-data').style.display='block';
         }
        const countryName = document.getElementById('input-country-name').value
        countryNameInput(countryName);
