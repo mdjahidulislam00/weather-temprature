@@ -1,0 +1,30 @@
+body{
+    margin:0px;
+    padding:0px;
+}
+#countries-container{
+    margin-top: 20px;
+    margin-left: 50px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
+    
+}
+.header{
+    color:blue;
+    text-align:center;
+    font-weight: 700;
+    font-size: 40px;
+}
+#country-area{
+    width:350px;
+    text-align:center;
+    border: 5px solid rgb(4, 92, 92);
+    background-color: rgb(239, 243, 243);
+    border-radius: 10px;
+    padding:10px;
+}
+#country-area img{
+    width:300px;
+    height:150px;
+}
